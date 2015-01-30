@@ -1,0 +1,9 @@
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\Daishi.Tutorials.RobotFactory.Tests.dll
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\Daishi.Tutorials.RobotFactory.Tests.pdb
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\Daishi.Tutorials.RobotFactory.dll
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\nunit.framework.dll
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\Daishi.Tutorials.RobotFactory.pdb
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\bin\Debug\nunit.framework.xml
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\obj\Debug\Daishi.Tutorials.RobotFactory.Tests.csprojResolveAssemblyReference.cache
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\obj\Debug\Daishi.Tutorials.RobotFactory.Tests.dll
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory.Tests\obj\Debug\Daishi.Tutorials.RobotFactory.Tests.pdb
