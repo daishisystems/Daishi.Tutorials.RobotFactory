@@ -5,7 +5,7 @@ using System.Collections.Generic;
 #endregion
 
 namespace Daishi.Tutorials.RobotFactory {
-    public class DeliveryBay {
+    public abstract class DeliveryBay {
         public List<RobotPart> RobotParts { get; set; }
     }
 }

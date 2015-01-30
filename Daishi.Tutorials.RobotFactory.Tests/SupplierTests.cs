@@ -17,7 +17,7 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
                 }
             };
 
-            var deliveryBay = new DeliveryBay();
+            var deliveryBay = new MockedDeliveryBay();
             mechSupplier.DeliverRobotParts(deliveryBay);
 
             Assert.AreEqual(2, deliveryBay.RobotParts.Count);
