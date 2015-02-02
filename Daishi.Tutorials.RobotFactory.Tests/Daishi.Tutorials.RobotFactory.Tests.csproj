@@ -45,7 +45,7 @@
     <Compile Include="MockedDeliveryBay.cs" />
     <Compile Include="MockedRobotPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupplierTests.cs" />
+    <Compile Include="RobotPartSupplierTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

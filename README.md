@@ -1,2 +1,2 @@
 # Daishi.Tutorials.RobotFactory
-A tutorial focused on Object Oriented and Test Driven Design
+A tutorial focused on Object Oriented and Test Driven Design in C#.

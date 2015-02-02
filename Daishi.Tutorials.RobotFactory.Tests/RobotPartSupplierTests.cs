@@ -7,10 +7,10 @@ using NUnit.Framework;
 
 namespace Daishi.Tutorials.RobotFactory.Tests {
     [TestFixture]
-    internal class SupplierTests {
+    internal class RobotPartSupplierTests {
         [Test]
-        public void SupplierDeliversRobotParts() {
-            var mechSupplier = new MechSupplier {
+        public void RobotPartSupplierDeliversRobotParts() {
+            var mechSupplier = new RobotPartSupplier {
                 RobotParts = new List<RobotPart> {
                     new MockedRobotPart(),
                     new MockedRobotPart()
