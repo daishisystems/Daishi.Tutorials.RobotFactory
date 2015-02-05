@@ -42,10 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Build.cs" />
+    <Compile Include="IBuildRobotPartSupplier.cs" />
     <Compile Include="MockedDeliveryBay.cs" />
     <Compile Include="MockedRobotPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotPartSupplierBuilder.cs" />
     <Compile Include="RobotPartSupplierTests.cs" />
+    <Compile Include="SupplierAssertions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

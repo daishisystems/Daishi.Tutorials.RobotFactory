@@ -1,3 +1,7 @@
+_ReSharper.*
+obj
+*.suo
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
