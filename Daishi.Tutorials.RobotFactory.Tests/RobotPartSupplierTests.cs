@@ -12,8 +12,8 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
         public void RobotPartSupplierDeliversRobotParts() {
             var mechSupplier = new RobotPartSupplier {
                 RobotParts = new List<RobotPart> {
-                    new MockedRobotPart(),
-                    new MockedRobotPart()
+                    new MockedRobotPart(RobotPartCategory.Assembly),
+                    new MockedRobotPart(RobotPartCategory.Assembly)
                 }
             };
 

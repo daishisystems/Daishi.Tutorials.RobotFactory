@@ -44,8 +44,10 @@
   <ItemGroup>
     <Compile Include="MockedDeliveryBay.cs" />
     <Compile Include="MockedRobotPart.cs" />
+    <Compile Include="MockedWorkerDrone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotPartSupplierTests.cs" />
+    <Compile Include="WorkerDroneTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
