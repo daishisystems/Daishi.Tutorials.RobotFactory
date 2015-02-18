@@ -13,12 +13,12 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
             var workerDrone = new MockedWorkerDrone();
 
             workerDrone.IdentifyRobotPart(robotPart);
-            Assert.IsInstanceOf<AssemblyRoomTransportMechanism>(workerDrone.TransportMechanism);
+            Assert.IsInstanceOf<AssemblyRoomTransportMechanism>(workerDrone.GetTransportationMechanism());
 
             robotPart = new MockedRobotPart(RobotPartCategory.Weapon);
 
             workerDrone.IdentifyRobotPart(robotPart);
-            Assert.IsInstanceOf<ArmouryTransportMechanism>(workerDrone.TransportMechanism);
+            Assert.IsInstanceOf<ArmouryTransportMechanism>(workerDrone.GetTransportationMechanism());
         }
     }
 }

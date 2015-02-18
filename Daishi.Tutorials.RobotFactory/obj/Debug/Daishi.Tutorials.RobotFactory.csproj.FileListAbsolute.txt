@@ -2,3 +2,4 @@ C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory\bin\Debu
 C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory\bin\Debug\Daishi.Tutorials.RobotFactory.pdb
 C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory\obj\Debug\Daishi.Tutorials.RobotFactory.dll
 C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory\obj\Debug\Daishi.Tutorials.RobotFactory.pdb
+C:\projects\Daishi.Tutorials.RobotFactory\Daishi.Tutorials.RobotFactory\obj\Debug\Daishi.Tutorials.RobotFactory.csprojResolveAssemblyReference.cache
