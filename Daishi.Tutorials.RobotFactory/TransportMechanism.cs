@@ -19,7 +19,7 @@ namespace Daishi.Tutorials.RobotFactory {
             if (_factoryRoom == null) {
                 EnterRoom();
             }
-            _factoryRoom.SetRobotParts(new List<RobotPart>());
+            _factoryRoom.SetRobotParts(new List<RobotPart>(robotParts));
             robotParts.Clear();
 
             return _factoryRoom;
