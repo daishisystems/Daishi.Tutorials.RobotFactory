@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockedAssembly.cs" />
     <Compile Include="MockedDeliveryBay.cs" />
-    <Compile Include="MockedRobotPart.cs" />
+    <Compile Include="MockedWeapon.cs" />
     <Compile Include="MockedWorkerDrone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotPartSupplierTests.cs" />

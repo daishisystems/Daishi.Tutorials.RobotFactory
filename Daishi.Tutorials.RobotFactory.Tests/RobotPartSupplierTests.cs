@@ -12,15 +12,15 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
         public void RobotPartSupplierDeliversRobotParts() {
             var mechSupplier = new RobotPartSupplier {
                 RobotParts = new List<RobotPart> {
-                    new MockedRobotPart(RobotPartCategory.Assembly),
-                    new MockedRobotPart(RobotPartCategory.Assembly)
+                    new MockedAssembly(),
+                    new MockedAssembly()
                 }
             };
 
             var deliveryBay = new MockedDeliveryBay();
             mechSupplier.DeliverRobotParts(deliveryBay);
 
-            Assert.AreEqual(2, deliveryBay.RobotParts.Count);
+            Assert.AreEqual(2, deliveryBay.GetRobotPartCount());
             Assert.AreEqual(0, mechSupplier.RobotParts.Count);
         }
     }

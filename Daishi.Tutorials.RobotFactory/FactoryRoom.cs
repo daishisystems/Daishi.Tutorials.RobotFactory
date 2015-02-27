@@ -7,14 +7,18 @@ using System.Collections.Generic;
 namespace Daishi.Tutorials.RobotFactory {
     public abstract class FactoryRoom {
         private readonly List<TransportMechanism> _transportMechanisms = new List<TransportMechanism>();
-        private List<RobotPart> _robotParts;
+        private readonly List<RobotPart> _robotParts;
+
+        protected FactoryRoom() {
+            _robotParts = new List<RobotPart>();
+        }
 
         public void AddTransportationMechanism(TransportMechanism transportMechanism) {
             _transportMechanisms.Add(transportMechanism);
         }
 
-        public void SetRobotParts(List<RobotPart> robotParts) {
-            _robotParts = robotParts;
+        public void AddRobotPart(RobotPart robotPart) {
+            _robotParts.Add(robotPart);
         }
 
         public int GetOccupantCount() {

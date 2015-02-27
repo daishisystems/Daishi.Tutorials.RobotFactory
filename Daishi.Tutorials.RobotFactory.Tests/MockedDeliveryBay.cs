@@ -1,3 +1,3 @@
 ﻿namespace Daishi.Tutorials.RobotFactory.Tests {
-    internal class MockedDeliveryBay : DeliveryBay {}
+    internal class MockedDeliveryBay : FactoryRoom {}
 }

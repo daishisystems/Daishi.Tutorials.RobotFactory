@@ -1,5 +1,6 @@
 ﻿#region Includes
 
+using System.Linq;
 using NUnit.Framework;
 
 #endregion
@@ -9,21 +10,21 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
     internal class WorkerDroneTests {
         [Test]
         public void WorkerDroneIdentifiesRobotPart() {
-            var robotPart = new MockedRobotPart(RobotPartCategory.Assembly);
+            RobotPart robotPart = new MockedAssembly();
             var workerDrone = new MockedWorkerDrone();
 
-            workerDrone.IdentifyRobotPart(robotPart);
-            Assert.IsInstanceOf<AssemblyRoomTransportMechanism>(workerDrone.GetTransportationMechanism());
+            var transportMechanism = workerDrone.IdentifyRobotPart(robotPart);
+            Assert.IsInstanceOf<AssemblyRoomTransportMechanism>(transportMechanism);
 
-            robotPart = new MockedRobotPart(RobotPartCategory.Weapon);
+            robotPart = new MockedWeapon();
 
-            workerDrone.IdentifyRobotPart(robotPart);
-            Assert.IsInstanceOf<ArmouryTransportMechanism>(workerDrone.GetTransportationMechanism());
+            transportMechanism = workerDrone.IdentifyRobotPart(robotPart);
+            Assert.IsInstanceOf<ArmouryTransportMechanism>(transportMechanism);
         }
 
         [Test]
         public void WorkerDronePicksUpRobotPart() {
-            RobotPart robotPart = new MockedRobotPart(RobotPartCategory.Assembly);
+            RobotPart robotPart = new MockedAssembly();
             WorkerDrone workerDrone = new MockedWorkerDrone();
 
             workerDrone.PickUpRobotPart(robotPart);
@@ -33,23 +34,35 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
         [Test]
         public void WorkerDroneOffLoadsRobotParts() {
             WorkerDrone workerDrone = new MockedWorkerDrone();
-            RobotPart robotPart = new MockedRobotPart(RobotPartCategory.Assembly);
+            RobotPart robotPart = new MockedAssembly();
 
             workerDrone.PickUpRobotPart(robotPart);
-            var factoryRoom = workerDrone.TransportRobotParts();
+            workerDrone.TransportRobotParts();
 
-            Assert.AreEqual(0, workerDrone.GetRobotPartCount());
-            Assert.AreEqual(1, factoryRoom.GetRobotPartCount());
-            Assert.IsInstanceOf<AssemblyRoom>(factoryRoom);
-
-            robotPart = new MockedRobotPart(RobotPartCategory.Weapon);
+            Assert.AreEqual(1, workerDrone.GetRobotPartCount());
+            robotPart = new MockedWeapon();
 
             workerDrone.PickUpRobotPart(robotPart);
-            factoryRoom = workerDrone.TransportRobotParts();
+            workerDrone.TransportRobotParts();
 
-            Assert.AreEqual(0, workerDrone.GetRobotPartCount());
-            Assert.AreEqual(1, factoryRoom.GetRobotPartCount());
-            Assert.IsInstanceOf<Armoury>(factoryRoom);
+            Assert.AreEqual(1, workerDrone.GetRobotPartCount());
+        }
+
+        [Test]
+        public void WorkerDroneReturnsToDeliveryBayAfterDeliveringRobotParts() {
+            WorkerDrone workerDrone = new MockedWorkerDrone();
+
+            var randomAssembly = new MockedAssembly();
+            var randomWeapon = new MockedWeapon();
+
+            workerDrone.PickUpRobotPart(randomAssembly);
+            workerDrone.PickUpRobotPart(randomWeapon);
+
+            workerDrone.TransportRobotParts();
+            Assert.True(workerDrone.GetTransportationMechanisms().Any());
+
+            var transportMechanism = workerDrone.GetTransportationMechanisms().First();
+            Assert.IsInstanceOf<DeliveryBayTransportMechanism>(transportMechanism);
         }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="AssemblyRoom.cs" />
     <Compile Include="AssemblyRoomTransportMechanism.cs" />
     <Compile Include="DeliveryBay.cs" />
+    <Compile Include="DeliveryBayTransportMechanism.cs" />
     <Compile Include="FactoryRoom.cs" />
     <Compile Include="RobotPartCategory.cs" />
     <Compile Include="RobotPartSupplier.cs" />

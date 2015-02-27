@@ -7,40 +7,46 @@ using System.Collections.Generic;
 
 namespace Daishi.Tutorials.RobotFactory {
     public abstract class WorkerDrone {
-        private TransportMechanism _transportMechanism;
-        private readonly List<RobotPart> _robotParts = new List<RobotPart>();
+        private readonly List<TransportMechanism> _transportMechanisms;
 
-        protected WorkerDrone() {}
-
-        public TransportMechanism GetTransportationMechanism() {
-            return _transportMechanism;
+        protected WorkerDrone() {
+            _transportMechanisms = new List<TransportMechanism>();
         }
 
-        public void IdentifyRobotPart(RobotPart robotPart) {
+        public TransportMechanism IdentifyRobotPart(RobotPart robotPart) {
             switch (robotPart.RobotPartCategory) {
                 case RobotPartCategory.Assembly:
-                    _transportMechanism = new AssemblyRoomTransportMechanism();
-                    break;
+                    return new AssemblyRoomTransportMechanism((Assembly) robotPart);
                 case RobotPartCategory.Weapon:
-                    _transportMechanism = new ArmouryTransportMechanism();
-                    break;
+                    return new ArmouryTransportMechanism((Weapon) robotPart);
             }
+            throw new NotImplementedException("I can't identify this component!");
         }
 
         public void PickUpRobotPart(RobotPart robotPart) {
-            _robotParts.Add(robotPart);
-            IdentifyRobotPart(robotPart);
+            var transportMechanism = IdentifyRobotPart(robotPart);
+            _transportMechanisms.Add(transportMechanism);
         }
 
-        public FactoryRoom TransportRobotParts() {
-            if (_transportMechanism == null) {
-                throw new NullReferenceException("No Transportation-Mechanism defined!");
+        public void TransportRobotParts() {
+            foreach (var transportMechanism in _transportMechanisms) {
+                transportMechanism.OffLoadRobotPart();
             }
-            return _transportMechanism.OffLoadRobotParts(_robotParts);
+
+            _transportMechanisms.Clear();
+
+            var deliveryBayTransportMechanism = new DeliveryBayTransportMechanism();
+            _transportMechanisms.Add(deliveryBayTransportMechanism);
+
+            deliveryBayTransportMechanism.EnterRoom();
         }
 
         public int GetRobotPartCount() {
-            return _robotParts.Count;
+            return _transportMechanisms.Count;
+        }
+
+        public List<TransportMechanism> GetTransportationMechanisms() {
+            return _transportMechanisms;
         }
     }
 }
