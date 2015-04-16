@@ -47,6 +47,7 @@
     <Compile Include="MockedWeapon.cs" />
     <Compile Include="MockedWorkerDrone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotBuilderTests.cs" />
     <Compile Include="RobotPartSupplierTests.cs" />
     <Compile Include="WorkerDroneTests.cs" />
   </ItemGroup>
