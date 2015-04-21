@@ -1,7 +1,7 @@
 ﻿namespace Daishi.Tutorials.RobotFactory {
-    public class BasicRobotBuilder : RobotBuilder {
-        public BasicRobotBuilder() {
-            robot = new BasicRobot();
+    public class CaterpillarRobotBuilder : RobotBuilder {
+        public CaterpillarRobotBuilder() {
+            robot = new CaterpillarRobot();
         }
 
         public override void BuildHead() {
@@ -18,8 +18,8 @@
         }
 
         public override void BuildLegs() {
-            robot.LeftLeg = new BasicLeftLeg();
-            robot.RightLeg = new BasicRightLeg();
+            robot.LeftLeg = new Caterpillar();
+            robot.RightLeg = new Caterpillar();
         }
     }
 }

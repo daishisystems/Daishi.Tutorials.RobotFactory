@@ -53,6 +53,9 @@
     <Compile Include="BasicRobot.cs" />
     <Compile Include="BasicRobotBuilder.cs" />
     <Compile Include="BasicTorso.cs" />
+    <Compile Include="Caterpillar.cs" />
+    <Compile Include="CaterpillarRobot.cs" />
+    <Compile Include="CaterpillarRobotBuilder.cs" />
     <Compile Include="DeliveryBay.cs" />
     <Compile Include="DeliveryBayTransportMechanism.cs" />
     <Compile Include="FactoryRoom.cs" />
