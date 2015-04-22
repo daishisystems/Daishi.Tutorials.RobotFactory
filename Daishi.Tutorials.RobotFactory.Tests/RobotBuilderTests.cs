@@ -9,19 +9,19 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
     internal class RobotBuilderTests {
         [Test]
         public void RobotBuilderBuildsBasicRobot() {
-            var robotBuilder = new BasicRobotBuilder();
+            var basicRobotBuilder = new BasicRobotBuilder();
 
-            robotBuilder.BuildHead();
-            robotBuilder.BuildTorso();
-            robotBuilder.BuildArms();
-            robotBuilder.BuildLegs();
+            basicRobotBuilder.BuildHead();
+            basicRobotBuilder.BuildTorso();
+            basicRobotBuilder.BuildArms();
+            basicRobotBuilder.BuildLegs();
 
-            Assert.IsInstanceOf<BasicHead>(robotBuilder.Robot.Head);
-            Assert.IsInstanceOf<BasicTorso>(robotBuilder.Robot.Torso);
-            Assert.IsInstanceOf<BasicLeftArm>(robotBuilder.Robot.LeftArm);
-            Assert.IsInstanceOf<BasicRightArm>(robotBuilder.Robot.RightArm);
-            Assert.IsInstanceOf<BasicLeftLeg>(robotBuilder.Robot.LeftLeg);
-            Assert.IsInstanceOf<BasicRightLeg>(robotBuilder.Robot.RightLeg);
+            Assert.IsInstanceOf<BasicHead>(basicRobotBuilder.Robot.Head);
+            Assert.IsInstanceOf<BasicTorso>(basicRobotBuilder.Robot.Torso);
+            Assert.IsInstanceOf<BasicLeftArm>(basicRobotBuilder.Robot.LeftArm);
+            Assert.IsInstanceOf<BasicRightArm>(basicRobotBuilder.Robot.RightArm);
+            Assert.IsInstanceOf<BasicLeftLeg>(basicRobotBuilder.Robot.LeftLeg);
+            Assert.IsInstanceOf<BasicRightLeg>(basicRobotBuilder.Robot.RightLeg);
         }
 
         [Test]
@@ -39,6 +39,21 @@ namespace Daishi.Tutorials.RobotFactory.Tests {
             Assert.IsInstanceOf<BasicRightArm>(caterpillarRobotBuilder.Robot.RightArm);
             Assert.IsInstanceOf<Caterpillar>(caterpillarRobotBuilder.Robot.LeftLeg);
             Assert.IsInstanceOf<Caterpillar>(caterpillarRobotBuilder.Robot.RightLeg);
+        }
+
+        [Test]
+        public void RobotConstructorConstructsRobot() {
+            var robotConstructor = new RobotConstructor();
+            var basicRobotBuilder = new BasicRobotBuilder();
+
+            robotConstructor.Construct(basicRobotBuilder);
+
+            Assert.IsInstanceOf<BasicHead>(basicRobotBuilder.Robot.Head);
+            Assert.IsInstanceOf<BasicTorso>(basicRobotBuilder.Robot.Torso);
+            Assert.IsInstanceOf<BasicLeftArm>(basicRobotBuilder.Robot.LeftArm);
+            Assert.IsInstanceOf<BasicRightArm>(basicRobotBuilder.Robot.RightArm);
+            Assert.IsInstanceOf<BasicLeftLeg>(basicRobotBuilder.Robot.LeftLeg);
+            Assert.IsInstanceOf<BasicRightLeg>(basicRobotBuilder.Robot.RightLeg);
         }
     }
 }
